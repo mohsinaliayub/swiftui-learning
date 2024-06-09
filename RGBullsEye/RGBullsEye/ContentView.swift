@@ -20,7 +20,13 @@ struct ContentView: View {
             Color(rgbStruct: guess)
             Text("R: 204 G: 76 B: 178")
                 .padding()
-            Slider(value: .constant(0.5))
+            HStack {
+                Text("0")
+                Slider(value: $guess.red)
+                    .tint(.red)
+                Text("255")
+            }
+            .padding(.horizontal)
             Button("Hit Me") {
                 
             }
