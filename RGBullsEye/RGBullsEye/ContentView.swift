@@ -18,9 +18,7 @@ struct ContentView: View {
             Text("R: ???   G: ???   B: ???")
                 .padding()
             Color(rgbStruct: guess)
-            Text("R: \(Int(guess.red * 255))   " +
-                 "G: \(Int(guess.green * 255))   " +
-                 "B: \(Int(guess.blue * 255))")
+            Text(guess.intString())
                 .padding()
             HStack {
                 Text("0")
