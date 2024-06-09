@@ -10,24 +10,26 @@ import SwiftUI
 struct ContentView: View {
     @State private var game = Game()
     @State var guess: RGB
-    @State private var showAlert = false
+    @State private var showScore = false
     
     var body: some View {
         VStack {
-            Color(rgbStruct: game.target)
-            Text(!showAlert ? "R: ???   G: ???   B: ???" : game.target.intString())
+            Circle()
+                .fill(Color(rgbStruct: game.target))
+            Text(!showScore ? "R: ???   G: ???   B: ???" : game.target.intString())
                 .padding()
-            Color(rgbStruct: guess)
+            Circle()
+                .fill(Color(rgbStruct: guess))
             Text(guess.intString())
                 .padding()
             ColorSlider(value: $guess.red, trackColor: .red)
             ColorSlider(value: $guess.green, trackColor: .green)
             ColorSlider(value: $guess.blue, trackColor: .blue)
             Button("Hit Me") {
-                showAlert = true
+                showScore = true
                 game.check(guess: guess)
             }
-            .alert("Your Score", isPresented: $showAlert) {
+            .alert("Your Score", isPresented: $showScore) {
                 Button("OK", role: .cancel) {
                     game.startNewRound()
                     guess = RGB()
