@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var game = Game()
+    @State var guess: RGB
+    
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Color(red: 0.5, green: 0.5, blue: 0.5)
+            Text("R: ??? G: ??? B: ???")
+                .padding()
+            Color(red: 0.5, green: 0.5, blue: 0.5)
+            Text("R: 204 G: 76 B: 178")
+                .padding()
+            Slider(value: .constant(0.5))
+            Button("Hit Me") {
+                
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(guess: RGB(red: 0.8, green: 0.3, blue: 0.7))
 }
