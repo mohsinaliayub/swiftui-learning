@@ -15,10 +15,12 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Color(rgbStruct: game.target)
-            Text("R: ??? G: ??? B: ???")
+            Text("R: ???   G: ???   B: ???")
                 .padding()
             Color(rgbStruct: guess)
-            Text("R: 204 G: 76 B: 178")
+            Text("R: \(Int(guess.red * 255))   " +
+                 "G: \(Int(guess.green * 255))   " +
+                 "B: \(Int(guess.blue * 255))")
                 .padding()
             HStack {
                 Text("0")
