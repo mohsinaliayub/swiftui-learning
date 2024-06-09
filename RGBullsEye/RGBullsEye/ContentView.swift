@@ -14,10 +14,10 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Color(red: 0.5, green: 0.5, blue: 0.5)
+            Color(rgbStruct: game.target)
             Text("R: ??? G: ??? B: ???")
                 .padding()
-            Color(red: 0.5, green: 0.5, blue: 0.5)
+            Color(rgbStruct: guess)
             Text("R: 204 G: 76 B: 178")
                 .padding()
             Slider(value: .constant(0.5))
